@@ -15,7 +15,7 @@ class SingularPathSegmentNameGenerator implements PathSegmentNameGeneratorInterf
      *
      * @return string A string that is a part of the route name
      */
-    public function getSegmentName(string $name, bool $collection = true): string
+    public function getSegmentName(string $name, bool $collection = false): string
     {
         $name = $this->dashize($name);
 
