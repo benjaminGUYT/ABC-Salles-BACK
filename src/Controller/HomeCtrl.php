@@ -11,7 +11,7 @@
          * @Route("/")
          */
         public function index() {
-            return new Response('Racine de l\'API 2');
+            return new Response('Racine de l\'API 3');
         }
     }
 
