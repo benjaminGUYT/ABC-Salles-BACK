@@ -14,7 +14,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RefPrenomsRepository")
  * @ApiResource
- * @ApiFilter(SearchFilter::class, properties={"label": "partial"})
+ * @ApiFilter(SearchFilter::class, properties={"label": "ipartial"})
  */
 class RefPrenoms
 {
