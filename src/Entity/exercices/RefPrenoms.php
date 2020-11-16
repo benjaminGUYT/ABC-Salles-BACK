@@ -146,9 +146,6 @@ class RefPrenoms implements FilterInterface
 
     public function getDescription(string $resourceClass): array
     {
-        if (!$this->properties) {
-            return [];
-        }
 
         $description = [];
         
