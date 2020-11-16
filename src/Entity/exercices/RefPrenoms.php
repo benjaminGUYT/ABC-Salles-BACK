@@ -9,11 +9,12 @@ use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RefPrenomsRepository")
  * @ApiResource
- * @ApiFilter(RefPrenoms::class, properties={"label": "partial"})
+ * @ApiFilter(SearchFilter::class, properties={"label": "partial"})
  */
 class RefPrenoms implements FilterInterface
 {
@@ -146,9 +147,23 @@ class RefPrenoms implements FilterInterface
 
     public function getDescription(string $resourceClass): array
     {
+        if (!$this->properties) {
+            return [];
+        }
 
         $description = [];
-        
+        foreach ($this->label as $label => $strategy) {
+            $description["regexp_$label"] = [
+                'property' => $label,
+                'type' => 'string',
+                'required' => false,
+                'swagger' => [
+                    'description' => 'Filter using a regex. This will appear in the Swagger documentation!',
+                    'name' => 'Custom name to use in the Swagger documentation',
+                    'type' => 'Will appear below the name in the Swagger documentation',
+                ],
+            ];
+        }
 
         return $description;
     }
