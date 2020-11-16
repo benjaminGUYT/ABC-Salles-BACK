@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\RefPersRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\RefPersonnesRepository")
  * @ApiResource
  */
 class RefPers

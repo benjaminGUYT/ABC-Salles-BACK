@@ -2,12 +2,12 @@
 
 namespace App\Repository;
 
-use App\Entity\RefPers;
+use App\Entity\RefPersonnes;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Lieu[]    findAll()
+ * @method RefPers[]    findAll()
  */
 class RefPersRepository extends ServiceEntityRepository {
     public function __construct(ManagerRegistry $registry)
