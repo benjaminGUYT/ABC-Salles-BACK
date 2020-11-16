@@ -16,7 +16,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  * @ApiResource
  * @ApiFilter(SearchFilter::class, properties={"label": "partial"})
  */
-class RefPrenoms implements
+class RefPrenoms
 {
     /**
      * @ORM\Id()
