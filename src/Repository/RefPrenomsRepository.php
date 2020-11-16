@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\RefPrenoms;
+use App\Entity\exercices\RefPrenoms;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -12,7 +12,7 @@ use Doctrine\Persistence\ManagerRegistry;
 class RefPrenomsRepository extends ServiceEntityRepository {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Lieu::class);
+        parent::__construct($registry, RefPrenoms::class);
     }
 
 }
