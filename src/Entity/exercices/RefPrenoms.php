@@ -145,4 +145,5 @@ class RefPrenoms implements FilterInterface
         return $this;
     }
 
+    public abstract function getDescription(string $resourceClass): array;
 }
