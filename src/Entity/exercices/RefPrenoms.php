@@ -10,7 +10,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RefPrenomsRepository")
- * @ApiResource(SearchFilter::class, properties={"label": "partial"})
+ * @ApiResource
+ * @ApiFilter(SearchFilter::class, properties={"label": "partial"})
  */
 class RefPrenoms
 {
