@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource
  * @ApiFilter(SearchFilter::class, properties={"label": "partial"})
  */
-class RefPrenoms
+class RefPrenoms implements FilterInterface
 {
     /**
      * @ORM\Id()
