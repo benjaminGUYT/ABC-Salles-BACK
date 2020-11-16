@@ -152,7 +152,18 @@ class RefPrenoms implements FilterInterface
         }
 
         $description = [];
-
+        foreach ($this->properties as $property => $strategy) {
+            $description["regexp_$property"] = [
+                'property' => $property,
+                'type' => 'string',
+                'required' => false,
+                'swagger' => [
+                    'description' => 'Filter using a regex. This will appear in the Swagger documentation!',
+                    'name' => 'Custom name to use in the Swagger documentation',
+                    'type' => 'Will appear below the name in the Swagger documentation',
+                ],
+            ];
+        }
 
         return $description;
     }
