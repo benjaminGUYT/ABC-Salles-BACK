@@ -3,6 +3,7 @@
 namespace App\Entity\exercices;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Api\FilterInterface;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
