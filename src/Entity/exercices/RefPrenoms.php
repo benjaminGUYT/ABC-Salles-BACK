@@ -16,7 +16,7 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
  * @ApiResource
  * @ApiFilter(SearchFilter::class, properties={"label": "partial"})
  */
-class RefPrenoms implements FilterInterface
+class RefPrenoms implements
 {
     /**
      * @ORM\Id()
@@ -145,5 +145,4 @@ class RefPrenoms implements FilterInterface
         return $this;
     }
 
-    public abstract function getDescription(string $resourceClass): array;
 }
