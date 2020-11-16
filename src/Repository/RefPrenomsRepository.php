@@ -2,14 +2,14 @@
 
 namespace App\Repository;
 
-use App\Entity\RefPersonnes;
+use App\Entity\RefPrenoms;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @method RefPers[]    findAll()
  */
-class RefPersRepository extends ServiceEntityRepository {
+class RefPrenomsRepository extends ServiceEntityRepository {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Lieu::class);
