@@ -27,3 +27,5 @@ class SingularPathSegmentNameGenerator implements PathSegmentNameGeneratorInterf
         return strtolower(preg_replace('~(?<=\\w)([A-Z])~', '-$1', $string));
     }
 }
+
+?>
