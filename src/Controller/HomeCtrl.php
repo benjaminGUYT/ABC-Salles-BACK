@@ -11,7 +11,7 @@
          * @Route("/")
          */
         public function index() {
-            return new Response('Racine de l\'API 3');
+           $this->redirect("http://localhost:8000/api");
         }
     }
 
