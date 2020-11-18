@@ -11,7 +11,7 @@
          * @Route("/")
          */
         public function index() {
-           return $this->redirect("http://localhost:8000/api");
+           return $this->redirect("/api");
         }
     }
 
