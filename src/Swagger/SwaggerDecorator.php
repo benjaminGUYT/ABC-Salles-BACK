@@ -19,18 +19,12 @@ final class SwaggerDecorator implements NormalizerInterface
     {
         $docs = $this->decorated->normalize($object, $format, $context);
 
-        //$docs['paths']['/api/ref-prenoms']['get']['parameters'][0]['description'] = 'test';
-
-        //\print_r($docs['paths']['/api/ref-prenoms']['get']['parameters'][0]);
-
-        //print_r($docs['paths']['/api/ref-prenoms']['get']['parameters'][0]['description']);
-
+        // Note : C'est normal que le nom du paramètre soit inclus dans le hint, ca fait partit des specs swagger 3.
         foreach($docs['paths']['/api/ref-prenoms']['get']['parameters'] as &$param) {
             if($param['name'] == 'label') {
                 $param['description'] = 'Format de la recherche : LIKE "%...%"';
             }
         }
-
         
 
         // Override title
