@@ -6,7 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Api\FilterInterface;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use Doctrine\Common\Collections\Collection;
+
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
+
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
@@ -19,6 +22,8 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 class RefPrenoms
 {
     /**
+     * @param integer $id L'identifiant ..
+     * 
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -46,7 +51,18 @@ class RefPrenoms
     }
 
     /**
-     * @ORM\Column(type="string", length=255)
+     *  @param string $label Le prenom ..
+     * 
+     *  @ApiProperty(
+     *      attributes={
+     *          "openapi_context"={
+     *              "type"="string",
+     *              "example"="Benjamin"
+     *         }
+     *      }
+     *  )
+     * 
+     *  @ORM\Column(type="string", length=255)
      */
     private $label;
 
