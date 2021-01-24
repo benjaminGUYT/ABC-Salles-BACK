@@ -1,5 +1,12 @@
 api_platform:
     path_segment_name_generator: 'App\Operation\SingularPathSegmentNameGenerator'
+    formats:
+        json:     ['application/json']
+        jsonapi:  ['application/vnd.api+json']
+        xml:      ['application/xml', 'text/xml']
+        yaml:     ['application/x-yaml']
+        csv:      ['text/csv']
+        html:     ['text/html']
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:

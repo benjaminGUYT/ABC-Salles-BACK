@@ -20,15 +20,11 @@ final class SwaggerDecorator implements NormalizerInterface
         $docs = $this->decorated->normalize($object, $format, $context);
 
         // Note : C'est normal que le nom du paramètre soit inclus dans le hint, ca fait partit des specs swagger 3.
-        foreach($docs['paths']['/api/ref-prenoms']['get']['parameters'] as &$param) {
-            if($param['name'] == 'label') {
-                $param['description'] = 'Format de la recherche : LIKE "%...%"';
-            }
-        }
-        
 
         // Override title
-        $docs['info']['title'] = 'Symfony API Platform - Anti-sèche';
+        $docs['info']['title'] = 'Symfony API Platform - Memory game';
+        unset($docs['paths']['/api/record/{id}']);
+        unset($docs['paths']['/api/record']);
 
         return $docs;
     }
